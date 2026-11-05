@@ -7,7 +7,7 @@ description: Modify an existing Todoist task — content, due, priority, project
 
 ## Steps
 
-1. **Read config.** Todoist MCP alias.
+1. **Read config.** Todoist calls go through the REST API (see `lib/CONFIG.md`).
 
 2. **Identify the task.** Accept:
    - Direct task ID
@@ -18,7 +18,7 @@ description: Modify an existing Todoist task — content, due, priority, project
 
 4. **Apply changes.** Common: reschedule due, change priority, move project, edit content, add/remove labels.
 
-5. **Update** via Todoist MCP. Report the updated task.
+5. **Update** via `POST /tasks/<id>` (project moves via `POST /tasks/<id>/move`). Report the updated task.
 
 ## Notes
 

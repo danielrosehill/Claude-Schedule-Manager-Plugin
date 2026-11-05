@@ -15,8 +15,8 @@ Generates a structured Google Doc summarising what got done in a period and what
 
 3. **Pull source data** for the period:
    - Calendar events (attended, with attendees)
-   - Todoist completed tasks
-   - Todoist tasks still open with due dates inside the period (carry-overs)
+   - Todoist completed tasks (`GET /tasks/completed/by_completion_date`, REST API per `lib/CONFIG.md`)
+   - Todoist tasks still open with due dates inside the period (carry-overs; `GET /tasks/filter`)
 
 4. **Draft sections:**
    - **Header:** period label + date stamp

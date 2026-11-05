@@ -9,13 +9,13 @@ Picks up from the most recent `wrapup` and surfaces today's load.
 
 ## Steps
 
-1. **Read config.** Resolve workspace MCP, todoist MCP, `drive_folders.wrapups`, and (optionally) `drive_folders.morning_briefs`.
+1. **Read config.** Resolve workspace MCP, `drive_folders.wrapups`, and (optionally) `drive_folders.morning_briefs`.
 
 2. **Find the most recent wrapup** in the wrapups folder by created/modified date. Read its body.
 
 3. **Pull today's load:**
    - Calendar events for today
-   - Todoist tasks due today + overdue
+   - Todoist tasks due today + overdue (`GET /tasks/filter?query=today | overdue`, REST API per `lib/CONFIG.md`)
 
 4. **Compose the brief:**
    - **Where you left off:** Open items + final notes from the most recent wrapup

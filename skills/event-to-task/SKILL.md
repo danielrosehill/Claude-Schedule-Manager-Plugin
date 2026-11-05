@@ -7,7 +7,7 @@ description: Migrate a Google Calendar event into a Todoist task — two-part: c
 
 ## Steps
 
-1. **Read config.** Workspace MCP, Todoist MCP.
+1. **Read config.** Workspace MCP. Todoist goes through the REST API (see `lib/CONFIG.md`).
 
 2. **Identify the event(s).** Accept ID, URL, or fuzzy reference.
 

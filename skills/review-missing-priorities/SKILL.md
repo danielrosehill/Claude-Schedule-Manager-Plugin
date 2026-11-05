@@ -7,14 +7,14 @@ description: Audit Todoist for tasks lacking a priority. Read-only — produces 
 
 ## Steps
 
-1. **Read config.** Todoist MCP alias.
+1. **Read config.** Todoist calls go through the REST API (see `lib/CONFIG.md`).
 
 2. **Define scope.** Ask the user (or accept arguments):
    - All open tasks (default)
    - One project
    - Tasks due in a date range
 
-3. **Query Todoist** for tasks in scope. Filter to those with priority 4 (Todoist's "no priority").
+3. **Query Todoist** for tasks in scope (`GET /tasks/filter?query=p4`, or `GET /tasks` and keep `priority == 1`, which is the API's "no priority").
 
 4. **Present the list** as a table grouped by project:
    | Project | Task | Due | Created |
@@ -24,4 +24,4 @@ description: Audit Todoist for tasks lacking a priority. Read-only — produces 
 ## Notes
 
 - This skill is read-only. It never modifies tasks.
-- Todoist treats priority 4 as the default "no priority" — that's what we audit for.
+- In the API, priority `1` is the default "no priority" (the UI shows it as p4) — that's what we audit for.

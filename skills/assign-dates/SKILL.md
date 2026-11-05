@@ -7,9 +7,9 @@ description: Assign due dates to Todoist tasks in batch. Walks the user through 
 
 ## Steps
 
-1. **Read config.** Todoist MCP alias.
+1. **Read config.** Todoist calls go through the REST API (see `lib/CONFIG.md`).
 
-2. **Get the working set.** Either handed in from `review-missing-dates`, or freshly queried (default: all open undated tasks).
+2. **Get the working set.** Either handed in from `review-missing-dates`, or freshly queried (`GET /tasks/filter?query=no date`; default: all open undated tasks).
 
 3. **Walk the list interactively.** For each task, prompt for:
    - Specific date / datetime, or
@@ -20,7 +20,7 @@ description: Assign due dates to Todoist tasks in batch. Walks the user through 
 
 4. **Confirm the assignment table.**
 
-5. **Apply serially** via Todoist MCP. Collect failures.
+5. **Apply serially** via `POST /tasks/<id>` with `due_date` or `due_string`. Collect failures.
 
 6. **Report** per-task result.
 

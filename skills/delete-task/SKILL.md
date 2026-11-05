@@ -7,7 +7,7 @@ description: Delete a Todoist task. Confirms before deleting; offers complete-in
 
 ## Steps
 
-1. **Read config.** Todoist MCP alias.
+1. **Read config.** Todoist calls go through the REST API (see `lib/CONFIG.md`).
 
 2. **Identify the task** (ID, URL, or fuzzy reference — see `edit-task`).
 
@@ -17,7 +17,7 @@ description: Delete a Todoist task. Confirms before deleting; offers complete-in
 
 5. **Confirm.** Require explicit "yes, delete" before proceeding.
 
-6. **Delete** via Todoist MCP. Report result.
+6. **Delete** via `DELETE /tasks/<id>` (or `POST /tasks/<id>/close` if completing instead). Report result.
 
 ## Notes
 

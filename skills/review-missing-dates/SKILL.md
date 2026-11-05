@@ -7,14 +7,14 @@ description: Audit Todoist for tasks lacking a due date. Read-only — produces 
 
 ## Steps
 
-1. **Read config.** Todoist MCP alias.
+1. **Read config.** Todoist calls go through the REST API (see `lib/CONFIG.md`).
 
 2. **Define scope.** Ask (or accept arguments):
    - All open tasks (default)
    - One project
    - Tasks created before a cutoff (stale-task audit)
 
-3. **Query Todoist.** Filter to tasks with no due date.
+3. **Query Todoist.** `GET /tasks/filter?query=no date` (add `#Project` to scope).
 
 4. **Present the list** as a table grouped by project:
    | Project | Task | Priority | Created |
