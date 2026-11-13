@@ -43,7 +43,7 @@ Skills don't hardcode MCP tool names for Google. They read `config.mcp.<service>
 
 Todoist is not an MCP here. There is no `config.mcp.todoist`; an old one in `config.json` is ignored. Skills call the Todoist REST API v1 with `curl`:
 
-- Base `https://api.todoist.com/api/v1`, header `Authorization: Bearer $TODOIST_API_KEY`. The key is in Infisical; run as `with-secrets bash -c 'curl -s ... -H "Authorization: Bearer $TODOIST_API_KEY" ...'`. Never print the key or write it to a file.
+- Base `https://api.todoist.com/api/v1`, header `Authorization: Bearer $TODOIST_API_KEY`. Export `TODOIST_API_KEY` from your own secrets manager before calling it. Never print the key or write it to a file.
 - Create: `POST /tasks` with `{content, description, project_id, section_id, parent_id, labels, priority, due_string | due_date | due_datetime, deadline_date}`. Omit `project_id` for the Inbox.
 - Read: `GET /tasks?project_id=&label=&ids=` or `GET /tasks/filter?query=<Todoist filter>` (e.g. `no date`, `today | overdue`, `p4`). Paged: `{"results": [...], "next_cursor": ...}`; pass `cursor=` until null; `limit` up to 200.
 - Update: `POST /tasks/<id>` with only the fields to change. Move: `POST /tasks/<id>/move`. Complete: `POST /tasks/<id>/close`. Reopen: `POST /tasks/<id>/reopen`. Delete: `DELETE /tasks/<id>`.

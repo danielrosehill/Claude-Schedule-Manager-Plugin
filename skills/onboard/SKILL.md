@@ -21,7 +21,7 @@ Run this once before any other Schedule-Manager skill. Subsequent skills require
 
    Verify each alias resolves to a tool list including the expected capabilities. If a given MCP isn't registered, tell the user how to add it; do not proceed without both.
 
-   Todoist needs no MCP: skills call the REST API with `TODOIST_API_KEY`. Check it is available (`with-secrets --list`, or the env var) and test with `GET https://api.todoist.com/api/v1/projects?limit=1`.
+   Todoist needs no MCP: skills call the REST API with `TODOIST_API_KEY`. Check it is available (the `TODOIST_API_KEY` env var) and test with `GET https://api.todoist.com/api/v1/projects?limit=1`.
 
 3. **Create Drive folder tree.** Using the workspace MCP, create (or locate) folders under a root the user nominates (default name `Schedule-Manager`):
    - `Agendas`

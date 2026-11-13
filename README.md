@@ -21,7 +21,7 @@ The plugin doesn't bundle MCPs — the user wires up two separately and the plug
 |---|---|
 | Google Calendar, Docs, Gmail | [`gemini-cli-extensions/workspace`](https://github.com/gemini-cli-extensions/workspace) (Google official) |
 | Google Contacts (People API) | A standalone Contacts MCP (e.g., the companion `Diary-Contacts-MCP`) |
-| Todoist | none: REST API v1 with `curl`, key `TODOIST_API_KEY` (Infisical, run under `with-secrets`). See `lib/CONFIG.md` |
+| Todoist | none: REST API v1 with `curl`, key `TODOIST_API_KEY`, which you supply from your own secrets manager. See `lib/CONFIG.md` |
 
 Any equivalent MCP works for Google — the plugin only cares about the alias mapped in `config.json`.
 

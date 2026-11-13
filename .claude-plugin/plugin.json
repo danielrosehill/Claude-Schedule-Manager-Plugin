@@ -1,6 +1,6 @@
 {
   "name": "schedule-manager",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Personal schedule, task, and meeting management. Routes mixed brain-dumps into Google Calendar events and Todoist tasks; manages agenda/minutes Google Docs linked to events; produces wrapup logs and morning briefs.",
   "author": {
     "name": "Daniel Rosehill",
